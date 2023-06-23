@@ -14,5 +14,5 @@
 
 
 Authors
-*Joakim Mwamba
-*Jessica Turkson
+**Joakim Mwamba
+**Jessica Turkson

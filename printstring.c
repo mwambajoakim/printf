@@ -10,7 +10,7 @@
  *
  */
 
-int str_len(char *s)
+int str_len(const char *s)
 {
 int len = 0;
 

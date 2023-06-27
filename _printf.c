@@ -9,7 +9,7 @@ int _printf(const char * const format, ...)
 {
 	conversion_spec m[] = {
 		{"%s", printfstring}, {"%c", printchar},
-		{"%%", print_percent},
+		{"%%", print_percent}
 		};
 
 	va_list arguments;

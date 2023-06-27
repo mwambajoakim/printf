@@ -18,7 +18,7 @@ typedef struct format
 	int (*spec_func)();
 } conversion_spec;
 
-int put_char(char c);
+int put_char(char h);
 int _printf(const char *format, ...);
 int printfstring(va_list value);
 int printchar(va_list value);

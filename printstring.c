@@ -29,19 +29,22 @@ return (len - s);
 int printfstring(va_list value)
 {
 	char *s;
-	int i, length;
+	int j, length;
 
 	s = va_arg(value, char *);
 	if (s == NULL)
 	{
 		s = "(null)";
 		return (0);
+		for (j = 0; j < length; j++)
+			put_char(s[j]);
+			return (length);
 	}
 	else
 	{
 		length = str_len(s);
-		for (i = 0; i < length; i++)
-			put_char(s[i]);
+		for (j = 0; j < length; j++)
+			put_char(s[j]);
 		return (length);
 	}
 }

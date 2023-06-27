@@ -35,6 +35,7 @@ int printfstring(va_list value)
 	if (s == NULL)
 	{
 		s = "(null)";
+		length = str_len(s);
 		for (j = 0; j < length; j++)
 			put_char(s[j]);
 			return (length);

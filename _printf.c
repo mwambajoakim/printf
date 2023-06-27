@@ -33,7 +33,7 @@ int _printf(const char * const format, ...)
 			}
 			k--;
 		}
-		_putchar(format[j]);
+		put_char(format[j]);
 		len++;
 		j++;
 	}

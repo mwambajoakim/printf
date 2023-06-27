@@ -41,7 +41,7 @@ int printfstring(va_list value)
 	{
 		length = str_len(s);
 		for (i = 0; i < length; i++)
-			_putchar(s[i]);
+			put_char(s[i]);
 		return (length);
 	}
 }

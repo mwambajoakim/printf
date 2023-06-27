@@ -3,7 +3,7 @@
 
 /**
  * printchar - a functiom tha prints a character.
- * @value: arguments.
+ * @value: arguments passed to function
  * Return: 1 is success
  */
 int printchar(va_list value)

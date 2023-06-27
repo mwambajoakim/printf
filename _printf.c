@@ -19,7 +19,6 @@ int _printf(const char * const format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	Here:
 	while (format[j] != '\0')
 	{
 		k = 13;
@@ -29,7 +28,6 @@ int _printf(const char * const format, ...)
 			{
 				len += m[k].spec_func(arguments);
 				j = j + 2;
-				goto Here;
 			}
 			k--;
 		}

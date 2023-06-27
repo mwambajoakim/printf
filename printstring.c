@@ -34,6 +34,7 @@ int printfstring(va_list value)
 	s = va_arg(value, char *);
 	if (s == NULL)
 	{
+		s = '(null)';
 	return (0);
 	}
 	else

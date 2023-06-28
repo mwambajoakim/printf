@@ -23,6 +23,12 @@ int _printf(const char * const format, ...)
 			put_char(format[k]);
 			len += 1;
 		}
+
+		else if (format[k] == 'c')
+		{
+			put_char(format[k + 1]);
+			len += 1;
+		}
 	}
 	va_end(arguments);
 	return (len);

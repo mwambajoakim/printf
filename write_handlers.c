@@ -1,9 +1,14 @@
 i#include "main.h"
 
 /************************* WRITE HANDLE *************************/
+
 /**
+<<<<<<< HEAD
  * handle_write_char - Prints a character
  * to stdout
+=======
+ * handle_write_char - Prints a character to stdout
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
  * @c: Character to print
  * @buffer: Buffer array to handle printing
  * @flags: Calculates active flags
@@ -13,9 +18,14 @@ i#include "main.h"
  *
  * Return: Number of characters printed
  */
+<<<<<<< HEAD
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
 { /* char is stored at the left and padding at the buffer's right */
+=======
+int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size)
+{
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 	int p = 0;
 	char padd = ' ';
 
@@ -35,17 +45,24 @@ int handle_write_char(char c, char buffer[],
 			buffer[BUFF_SIZE - p - 2] = padd;
 
 		if (flags & F_MINUS)
+<<<<<<< HEAD
 			return (write(1, &buffer[0], 1) +
 					write(1, &buffer[BUFF_SIZE - p - 1], width - 1));
 		else
 			return (write(1, &buffer[BUFF_SIZE - p - 1], width - 1) +
 					write(1, &buffer[0], 1));
+=======
+			return (write(1, &buffer[0], 1) + write(1, &buffer[BUFF_SIZE - p - 1], width - 1));
+		else
+			return (write(1, &buffer[BUFF_SIZE - p - 1], width - 1) + write(1, &buffer[0], 1));
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 	}
 
 	return (write(1, &buffer[0], 1));
 }
 
 /************************* WRITE NUMBER *************************/
+
 /**
  * write_number - Prints a number
  * @is_negative: Flag indicating if the number is negative
@@ -58,8 +75,12 @@ int handle_write_char(char c, char buffer[],
  *
  * Return: Number of characters printed
  */
+<<<<<<< HEAD
 int write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
+=======
+int write_number(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size)
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 {
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
@@ -75,8 +96,12 @@ int write_number(int is_negative, int ind, char buffer[],
 	else if (flags & F_SPACE)
 		extra_ch = ' ';
 
+<<<<<<< HEAD
 	return (write_num(ind, buffer, flags, width, precision,
 		length, padd, extra_ch));
+=======
+	return (write_num(ind, buffer, flags, width, precision, length, padd, extra_ch));
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 }
 
 /**
@@ -92,9 +117,13 @@ int write_number(int is_negative, int ind, char buffer[],
  *
  * Return: Number of printed characters
  */
+<<<<<<< HEAD
 int write_num(int ind, char buffer[],
 	int flags, int width, int prec,
 	int length, char padd, char extra_c)
+=======
+int write_num(int ind, char buffer[], int flags, int width, int prec, int length, char padd, char extra_c)
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 {
 	int p, padd_start = 1;
 
@@ -150,11 +179,16 @@ int write_num(int ind, char buffer[],
  *
  * Return: Number of written characters
  */
+<<<<<<< HEAD
 int write_unsgnd(int is_negative, int ind,
 	char buffer[],
 	int flags, int width, int precision, int size)
 {
 	/* The number is stored at the buffer's right and starts at position p */
+=======
+int write_unsgnd(int is_negative, int ind, char buffer[], int flags, int width, int precision, int size)
+{
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 	int length = BUFF_SIZE - ind - 1, p = 0;
 	char padd = ' ';
 
@@ -209,8 +243,12 @@ int write_unsgnd(int is_negative, int ind,
  *
  * Return: Number of written characters
  */
+<<<<<<< HEAD
 int write_pointer(char buffer[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start)
+=======
+int write_pointer(char buffer[], int ind, int length, int width, int flags, char padd, char extra_c, int padd_start)
+>>>>>>> 1039e6493b3fe4a23a6556c1ac890fc22e212db6
 {
 	int p;
 

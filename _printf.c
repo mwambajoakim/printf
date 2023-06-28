@@ -13,27 +13,16 @@ int _printf(const char * const format, ...)
 		};
 
 	va_list arguments;
-	int j = 0, k, len = 0;
+	int j = 0, len = 0;
 
 	va_start(arguments, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-
-	while (format[j] != '\0')
+	for (k = 0; format[k] != '\0'; k++)
 	{
-		k = 13;
-		while (k >= 0)
+		if (format[k] != '%')
 		{
-			if (m[k].spec[0] == format[j] && m[k].spec[1] == format[j + 1])
-			{
-				len += m[k].spec_func(arguments);
-				j = j + 2;
-			}
-			k--;
+			put_char(format[k]);
+			len += 1;
 		}
-		put_char(format[j]);
-		len++;
-		j++;
 	}
 	va_end(arguments);
 	return (len);

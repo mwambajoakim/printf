@@ -1,4 +1,3 @@
-
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
@@ -6,13 +5,10 @@
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
-
-_printf - printf function
-
-@format: format string
-
-Return: number of printed chars
-*/
+  *_printf - printf function
+  *@format: format string
+  *Return: number of printed chars
+  */
 int _printf(const char *format, ...)
 {
 int v, printed = 0, printed_chars = 0;
@@ -59,13 +55,10 @@ return (printed_chars);
 }
 
 /**
-
-print_buffer - Prints the contents of the buffer if it exists
-
-@buffer: Array of characters
-
-@buff_ind: Pointer to the index at which to add the next character
-*/
+ *print_buffer - Prints the contents of the buffer if it exists
+ *@buffer: Array of characters
+ *@buff_ind: Pointer to the index at which to add the next character
+ */
 void print_buffer(char buffer[], int *buff_ind)
 {
 if (*buff_ind > 0)

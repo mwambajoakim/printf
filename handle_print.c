@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * handle_print - prints argument based on its type and
- * shows it on the stdout
+ * handle_print - prints an argument based on the type and
+ * shows it on stdout
  * @fmt: format specifier for argument printing
- * @arguments_list: arguments list to print out
+ * @arguments_list: arguments lists to be printed
  * @ind: ind.
- * @buff: print buffer array
- * @flags: calculates active flags.
+ * @buf: print buffer array
+ * @flags: calculates active flags
  * @wid: get width.
- * @prec: precision specification.
- * @size: size specifier.
- * Return: 1 or 2.
+ * @prec: precision specification
+ * @size: size specifier
+ * Return: 1 or 2;
  */
-int handle_print(const char *fmt, int *ind, va_list arguments_list, char buff[],
+int handle_print(const char *fmt, int *ind, va_list arguments_list, char buf[],
 	int flags, int wid, int prec, int size)
 {
 	int i, unknow_len = 0, printed_chars = -1;
@@ -28,7 +28,7 @@ int handle_print(const char *fmt, int *ind, va_list arguments_list, char buff[],
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
 	{
 		if (fmt[*ind] == fmt_types[i].fmt)
-			return (fmt_types[i].fn(arguments_list, buffer, flags, wid, prec, size));
+			return (fmt_types[i].fn(arguments_list, buf, flags, wid, prec, size));
 	}
 
 	if (fmt_types[i].fmt == '\0')
@@ -56,5 +56,6 @@ int handle_print(const char *fmt, int *ind, va_list arguments_list, char buff[],
 		unknow_len += write(1, &fmt[*ind], 1);
 		return (unknow_len);
 	}
-    return (printed_chars);
+
+	return (printed_chars);
 }

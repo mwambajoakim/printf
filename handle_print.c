@@ -4,17 +4,17 @@
  * handle_print - prints argument based on its type and
  * shows it on the stdout
  * @fmt: format specifier for argument printing
- * @argument_list: arguments list to print out
+ * @arguments_list: arguments list to print out
  * @ind: ind.
- * @buf: print buffer array
- * @fgs: calculates active flags.
+ * @buff: print buffer array
+ * @flags: calculates active flags.
  * @wid: get width.
  * @prec: precision specification.
  * @size: size specifier.
  * Return: 1 or 2.
  */
-int handle_print(const char *fmt, int *ind, va_list argument_list, char buf[],
-	int fgs, int wid, int prec, int size)
+int handle_print(const char *fmt, int *ind, va_list arguments_list, char buff[],
+	int flags, int wid, int prec, int size)
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
@@ -56,5 +56,5 @@ int handle_print(const char *fmt, int *ind, va_list argument_list, char buf[],
 		unknow_len += write(1, &fmt[*ind], 1);
 		return (unknow_len);
 	}
-   return (print_chars);
+    return (printed_chars);
 }

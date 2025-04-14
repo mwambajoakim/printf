@@ -10,6 +10,8 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	char *fmt_spec = "%";
+	const char *ptr = format;
+	unsigned int i = 0;
 
 	if (format == NULL)
 	{
@@ -17,11 +19,11 @@ int _printf(const char *format, ...)
 		return (1);
 	}
 	va_start(args, format);
-	while (*format)
+	while (ptr[i])
 	{
-		if (format == fmt_spec)
-			format++;
-		switch (*format)
+		if (ptr[i] == fmt_spec[i])
+			i++;
+		switch (*ptr)
 		{
 			case 'c':
 				printf("%c", va_arg(args, int));
@@ -29,7 +31,7 @@ int _printf(const char *format, ...)
 			case 's':
 				printf("%s", va_arg(args, char *));
 		}
-		format++;
+		i++;
 	}
 	printf("\n");
 	va_end(args);

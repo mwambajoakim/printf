@@ -27,6 +27,8 @@ int _printf(const char *format, ...)
 			case 'c':
 				printf("%c"va_arg(args, int));
 				break;
+			case 's':
+			printf("%s", va_arg(args, char *));
 		}
 		format++;
 	}

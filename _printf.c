@@ -8,7 +8,6 @@
  */
 int _printf(const char *format, ...)
 {
-	int len;
 	va_list args;
 	char *fmt_spec = "%";
 
@@ -18,21 +17,21 @@ int _printf(const char *format, ...)
 		return (1);
 	}
 	va_start(args, format);
-	while (format)
+	while (*format)
 	{
 		if (format == fmt_spec)
 			format++;
-		switch(format)
+		switch (*format)
 		{
 			case 'c':
-				printf("%c"va_arg(args, int));
+				printf("%c", va_arg(args, int));
 				break;
 			case 's':
-			printf("%s", va_arg(args, char *));
+				printf("%s", va_arg(args, char *));
 		}
 		format++;
 	}
-	len = strlen(format);
+	printf("\n");
 	va_end(args);
-	return (len);
+	return (0);
 }

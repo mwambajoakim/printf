@@ -9,9 +9,9 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char *fmt_spec = "%";
+	char *str;
+	char chr;
 	const char *ptr = format;
-	unsigned int i = 0;
 
 	if (format == NULL)
 	{
@@ -19,19 +19,29 @@ int _printf(const char *format, ...)
 		return (1);
 	}
 	va_start(args, format);
-	while (ptr[i])
+	while (*ptr)
 	{
-		if (ptr[i] == fmt_spec[i])
-			i++;
-		switch (*ptr)
+		if (*ptr == '%')
 		{
-			case 'c':
-				printf("%c", va_arg(args, int));
-				break;
-			case 's':
-				printf("%s", va_arg(args, char *));
+			ptr++;
+			switch (*ptr)
+			{
+				case 'c':
+					chr = va_arg(args, int);
+					printf("%c", chr);
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					if (str == NULL)
+						str = "(nil)";
+					printf("%s", str);
+			}
 		}
-		i++;
+		else
+		{
+			_putchar(*ptr);
+		}
+		ptr++;
 	}
 	printf("\n");
 	va_end(args);
